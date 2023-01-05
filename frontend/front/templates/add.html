@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+    <h1 style="text-align: center;"> Inserta una nueva cancion </h1>
+  </div>
+  <div class="container py-5">
+  <div class="row">
+      <div class="col">
+        {% if form.errors %}
+        <p style="color: red;"> Existe un error, o no se completaron todos los datos </p>
+        {% endif %}
+          <form action="/add/" method="POST">
+              {% csrf_token %}
+              <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" name ="nombre">
+              </div>
+              <div class="mb-3">
+                  <label for="artista" class="form-label">artista:</label>
+                  <input type="text" class="form-control" id="artista" name ="artista">
+              </div>
+              <div class="mb-3">
+                <label for="genero" class="form-label">genero:</label>
+                <input type="text" class="form-control" id="genero" name ="genero">
+              </div>
+              <div class="mb-3">
+                <label for="anio" class="form-label">anio:</label>
+                <input type="text" class="form-control" id="anio" name="anio"> 
+              </div>
+              <button type="submit" class="btn btn-dark btn-lg">Agregar Cancion</button>
+            </form>
+          </div>
+      </div>
+  </div>
+
+{% endblock content %}

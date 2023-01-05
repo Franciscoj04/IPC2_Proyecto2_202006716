@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/eliminar" method="DELETE">
+  <label for="xml_file">Seleccione el archivo XML de la playlist:</label><br>
+  <input type="file" id="xml_file" name="xml_file"><br>
+  <label for="song_id">Ingrese el ID de la canción a eliminar:</label><br>
+  <input type="text" id="song_id" name="song_id"><br>
+  <input type="submit" value="Eliminar">
+</form>
+{% endblock content %}
